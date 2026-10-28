@@ -1,6 +1,6 @@
 # SIR Vaccination Model
 
-Interactive epidemic simulator exploring herd immunity thresholds, vaccine efficacy, and non-inferiority limits. Built with Python (Shiny, SciPy, Matplotlib) and deployed entirely in the browser via Shinylive/WebAssembly — no server required.
+Interactive epidemic simulator exploring herd immunity thresholds, vaccine efficacy, and non-inferiority limits. Built in 2022 with Python (Shiny, SciPy, Matplotlib) and deployed entirely in the browser via Shinylive/WebAssembly — no server required.
 
 **[Live Demo →](https://<USERNAME>.github.io/sir-vaccination-model/)**
 
