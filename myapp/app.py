@@ -97,7 +97,7 @@ def f( R_0, recov, N,I, VE,NIlimit1,cov,vac_start, time_end,model_type):
          'infected': _I,
          'recovered': _R,
          'tot_infected':_Total_inf,
-         'tot_vacinated':_Total_va,
+         'tot_vaccinated':_Total_va,
          'day': time1  })
         df_B_hit= df_B_hit*100/N
         df_B_hit['day']= df_B_hit['day']*N/100
@@ -149,7 +149,7 @@ def f( R_0, recov, N,I, VE,NIlimit1,cov,vac_start, time_end,model_type):
                      'infected': I1,
                      'recovered': R1,
                      'tot_infected':Total_inf1,
-                     'tot_vacinated':Total_va1,
+                     'tot_vaccinated':Total_va1,
                      'day': time1  })
                   VM_model_B_NI=VM_model_B_NI*100/N
                   VM_model_B_NI['day']=VM_model_B_NI['day']*N/100
@@ -221,7 +221,7 @@ app_ui = ui.page_fluid(
                 ui.input_slider("recov", "Recovery period (days)", 1, 30, 10),
                 ui.input_slider("vacc_cov", "Vaccine coverage proportion of pop per day", min=0.001, max=0.01, value=0.005,step=0.0001),
                 ui.input_slider("vacc_eff", "Vaccine efficacy", 0.5, 1, 0.95),
-                ui.input_slider("non_inf", "Non-inferiorioty limit", 0.1, 0.3, 0.1),
+                ui.input_slider("non_inf", "Non-inferiority limit", 0.1, 0.3, 0.1),
                 ui.input_slider("vacc_day", "Vaccine start day", 1, 100, 1),
                 ui.input_slider("mod_dur", "Model duration", 200, 365, 300)
             ),
@@ -300,7 +300,7 @@ def server(input, output, session):
             ax[1, 1].axvline(x=hday_ni,color='cyan')
             #printing a custom message when there is no herd immunity 
             if(y_ni>100):
-                ax[1,1].text(50, 80, " No herd immuinity", ha="center", va="center", fontsize=10, bbox={"facecolor":"cyan", "alpha":0.9} )
+                ax[1,1].text(50, 80, " No herd immunity", ha="center", va="center", fontsize=10, bbox={"facecolor":"cyan", "alpha":0.9} )
                 ax[1, 1].set_title('NI limit=' + str(round((NIlimit*100), 2))+'% '   +' R0=' + str(round(R_0,2)), loc='right')
             else:
                 ax[1, 1].set_title('NI limit=' + str(round((NIlimit*100), 2))+'% '   +' R0=' + str(round(R_0,2)))
@@ -329,7 +329,7 @@ def server(input, output, session):
             ax[1, 0].axhline(y=y_hit,color='cyan', label="HI")
             #printing a custom message when there is no herd immunity 
             if(y_hit>100):
-                  ax[1,0].text(50, 80, " No herd immuinity", ha="center", va="center", fontsize=10, bbox={"facecolor":"cyan", "alpha":0.9} )
+                  ax[1,0].text(50, 80, " No herd immunity", ha="center", va="center", fontsize=10, bbox={"facecolor":"cyan", "alpha":0.9} )
             ax[1, 0].axvline(x=hday,color='cyan')
             ax[1, 0].set_title('R0=' + str(round(R_0,2)))
             ax[1,0].set_xlim([0, time_end])
